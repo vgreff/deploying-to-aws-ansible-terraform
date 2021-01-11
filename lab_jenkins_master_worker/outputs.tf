@@ -8,6 +8,12 @@ output "Jenkins-Worker-AMI-ID" {
 output "Jenkins-Master-Private-IP" {
   value = aws_instance.jenkins-master.private_ip
 }
+output "Jenkins-Master-Public-IP" {
+  value = aws_instance.jenkins-master.public_ip
+}
+output "Jenkins-Master-Public-DNS" {
+  value = aws_instance.jenkins-master.public_dns
+}
 output "Jenkins-Worker-Public-IPs" {
   value = {
     for instance in aws_instance.jenkins-worker-oregon :
